@@ -1,6 +1,6 @@
 @CHARSET "ISO-8859-1";
 
-<!--CAROUSEL STYLE-->
+<!--CAROUSEL STYLE STARTS HERE-->
 #myCarousel{padding-top:20px;}
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
@@ -9,16 +9,21 @@
      margin-top:70px;
       
   }
-  <!--NAVBAR STYLE-->
+  /*CAROUSEL STYLE ENDS HERE  */
+  /* NAVBAR STYLE STARTS HERE */
   
-  .navbar-inverse .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
-    color: #ffffff;
+   /* .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    
 	background-color:pink;
+} */
+  
+  .navbar .nav>li>a {
+  color:#720B87;
 }
   
-  .nav .navbar-nav .dropdown{
+ /*  .nav .navbar-nav .dropdown{
   background-color: pink;
-  }
+  } */
   .navbar {
   display:block;
   background-color: #f65a8c;
@@ -43,13 +48,19 @@
   visibility: visible;
   opacity: 1;
   }
-  <!--FOOTER STYLE-->
- /*  .footer{
-  background-color:black;
+  /* NAVBAR STYLE ENDS HERE */
+ /* FOOTER STYLE STARTS HERE */
   
- 
- 
-  } */
+
+.wrapper {
+	min-height: 100%;
+height: auto !important;
+height: 100%;
+margin: 0 auto -4em;
+}
+  .footer, .push {
+height: 4em;
+}
   
   .social:hover {
      -webkit-transform: scale(1.1);
@@ -83,17 +94,20 @@
  #social-em:hover {
      color: #f39c12;
  }
-  
+ /*FOOTER STYLE ENDS HERE */
+  /*LOGIN AND REGISTRATION STYLE STARTS HERE  */
  *[role="form"] {
     max-width: 530px;
-    padding: 15px;
-    margin: 0 auto;
+    padding: 20px;
+     margin: 0 auto;
+    margin-top:30px;
     background-color: #fff;
-    border-radius: 0.3em;
+    border-radius: 0.5em;
 }
 
 *[role="form"] h2 {
     margin-left: 5em;
     margin-bottom: 1em;
 }
+/*LOGIN AND REGISTRATION STYLE ENDS HERE  */
  
