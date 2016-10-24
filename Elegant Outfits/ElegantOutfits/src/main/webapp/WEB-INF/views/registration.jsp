@@ -16,7 +16,7 @@
 <body style="background-image:url('resources/images/12.jpg');background-repeat: no-repeat;background-size:cover; ">
 <jsp:include page="header.jsp"></jsp:include>
 <div class="container" >
-            <form class="form-horizontal" role="form" action="index.jsp" >
+            <form class="form-horizontal" role="form" action="index.jsp" method="post" >
                 <h2>Registration Form</h2>
                 <div class="form-group">
                    

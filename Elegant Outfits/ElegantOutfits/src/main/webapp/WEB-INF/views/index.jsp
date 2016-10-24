@@ -145,7 +145,7 @@ You choose your product, order it online,<br> and we deliver it right at your do
 </div>
 <div class="footer " style="background-color:#f65a8c;width:'100%';margin:'auto'; ">
 <div class="text-center center-block" style="background-color:#f65a8c;">
-            <p class="txt-railway">- Elegant Outfits -</p>
+            <p class="txt-railway"><b>- Elegant Outfits -</b></p>
             
             <p>Copyright © 2016,Created by Vinitha</p>
                 <a href="https://www.facebook.com"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>

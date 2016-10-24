@@ -52,7 +52,7 @@
  /* FOOTER STYLE STARTS HERE */
   
 
-.wrapper {
+/* .wrapper {
 	min-height: 100%;
 height: auto !important;
 height: 100%;
@@ -60,8 +60,23 @@ margin: 0 auto -4em;
 }
   .footer, .push {
 height: 4em;
+} */
+/* .footer-bottom{
+	background-color:#f65a8c;width:'100%';
+} */
+
+
+
+/* .footer-bottom {
+	background: #f65a8c;
+	border-top: 1px solid #DDDDDD;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
-  
+.footer-bottom p.pull-left {
+	padding-top: 6px;
+}
+   */
   .social:hover {
      -webkit-transform: scale(1.1);
      -moz-transform: scale(1.1);
