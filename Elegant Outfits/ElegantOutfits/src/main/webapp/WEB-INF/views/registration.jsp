@@ -12,11 +12,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
  <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
 <title>Registration Form</title>
+<script>
+
+function validatePassword(){
+	var password = document.getElementById("password");
+	var confirm_password = document.getElementById("confirmpassword");
+if(password.value != confirm_password.value) {
+  alert("Passwords Don't Match");
+  return false;
+} 
+}
+
+ password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword; 
+
+</script>
 </head>
 <body style="background-image:url('resources/images/12.jpg');background-repeat: no-repeat;background-size:cover; ">
 <jsp:include page="header.jsp"></jsp:include>
 <div class="container" >
-            <form class="form-horizontal" role="form" action="index.jsp" method="post" >
+            <form class="form-horizontal" role="form" action="Registrationsuccess" method="post" >
                 <h2>Registration Form</h2>
                 <div class="form-group">
                    
@@ -48,6 +63,14 @@
                         <input type="password" id="password" name="password" placeholder="Password" class="form-control" required>
                     </div>
                 </div>
+                 <div class="form-group">
+                 
+                    <div class="col-sm-9" style="margin-left: 5em;
+    margin-bottom: 1em;" >
+                        <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" class="form-control" required>
+                    </div>
+                </div>
+                
                 <div class="form-group">
                   
                     <div class="col-sm-9" style="margin-left: 5em;
@@ -63,7 +86,7 @@
                 <div class="form-group" >
                     <div class="col-sm-9" style="margin-left: 5em;
     margin-bottom: 1em;" >
-                        <button type="submit" class="btn btn-primary btn-block" style="background-color: #FF69B4">REGISTER</button>
+                        <button type="submit" class="btn btn-primary btn-block" onclick="return validatePassword()" style="background-color: #FF69B4">REGISTER</button>
                     </div>
                 </div>
            </form>
