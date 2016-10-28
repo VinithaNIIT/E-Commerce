@@ -22,10 +22,10 @@
 <!-- <a href="#" class="pull-left"><img src="resources/images/logo_1.jpg" height="80px" width="80px" ></a> -->
 
 
-<nav class="navbar navbar-inverse navbar-fixed-top"> 
+<!-- <nav class="navbar navbar-inverse navbar-fixed-top"> 
   <div class="container-fluid">
     <div class="navbar-header">
-     <!--  <a class="navbar-brand" href="#">Elegant Outfits</a> -->
+      <a class="navbar-brand" href="#">Elegant Outfits</a>
       <a href="#" class="pull-left"><img src="resources/images/logo_1.jpg" height="60px" width="80px" ></a> 
     </div>
     <ul class="nav navbar-nav" style="font-family: sans-serif;text-transform: uppercase;">
@@ -45,7 +45,9 @@
       <li><a href="Login" style="color: black;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
-</nav>
+</nav> -->
+
+<jsp:include page="header.jsp"></jsp:include>
 <div class="container">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -143,7 +145,9 @@ You choose your product, order it online,<br> and we deliver it right at your do
  </div>
  
 </div>
-<div class="footer " style="background-color:#f65a8c;width:'100%';margin:'auto'; ">
+
+ <jsp:include page="footer.jsp"></jsp:include>
+<!-- <div class="footer " style="background-color:#f65a8c;width:'100%';margin:'auto'; ">
 <div class="text-center center-block" style="background-color:#f65a8c;">
             <p class="txt-railway"><b>- Elegant Outfits -</b></p>
             
@@ -154,6 +158,6 @@ You choose your product, order it online,<br> and we deliver it right at your do
 	            
 </div>
 </div>
-
+ -->
 </body>
 </html>

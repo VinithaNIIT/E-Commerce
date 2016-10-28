@@ -40,6 +40,7 @@
 		</div>
 	</div>
 	</footer> -->
+	
 	<div class="footer " style="background-color:#f65a8c;width:'100%';margin:'auto'; ">
 <div class="text-center center-block" style="background-color:#f65a8c;">
             <p class="txt-railway"><b>- Elegant Outfits -</b></p>

@@ -47,5 +47,18 @@ public class HomeController {
 	  ModelAndView mv=new ModelAndView("login");	
 	  return mv;
 	}
+	@RequestMapping("/Supplier")
+	public ModelAndView supplier()
+	{
+	  ModelAndView mv=new ModelAndView("supplier");	
+	  return mv;
+	}
+	
+	@RequestMapping("/Category")
+	public ModelAndView category()
+	{
+	  ModelAndView mv=new ModelAndView("category");	
+	  return mv;
+	}
 
 }
