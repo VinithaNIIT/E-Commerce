@@ -9,12 +9,8 @@
 </head>
 <body>
 <table>
-<tr><td><h2>Thank you for Registering!!!! Your details are</h2></td></tr>
-<tr><td>FirstName:${u.firstname}</td></tr>
-<tr><td>UserName:${u.username}</td></tr>
-<tr><td>Password:${u.password}</td></tr>
- <tr><td>EmailId:${u.email}</td></tr>
-<tr><td>MobileNo:${u.mobile}</td></tr> 
+<tr><td><h2>Thank you for Registering!!!!</h2></td></tr>
+
 </table>
 
 </body>
