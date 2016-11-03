@@ -11,15 +11,15 @@ import org.springframework.stereotype.Component;
 @Entity
 public class Category {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int categoryid;
+	private String categoryid;
 	private String categoryname;
 	private String categorydescription;
 	
-	public int getCategoryid() {
+	
+	public String getCategoryid() {
 		return categoryid;
 	}
-	public void setCategoryid(int categoryid) {
+	public void setCategoryid(String categoryid) {
 		this.categoryid = categoryid;
 	}
 	public String getCategoryname() {
@@ -33,6 +33,11 @@ public class Category {
 	}
 	public void setCategorydescription(String categorydescription) {
 		this.categorydescription = categorydescription;
+	}
+	@Override
+	public String toString() {
+		return "Category [categoryid=" + categoryid + ", categoryname=" + categoryname + ", categorydescription="
+				+ categorydescription + "]";
 	}
 
 }

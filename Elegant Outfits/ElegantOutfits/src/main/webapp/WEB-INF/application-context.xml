@@ -34,6 +34,8 @@
 			<property name="annotatedClasses">
 			<list>
 				  <value>com.niit.model.User</value> <!-- Entity classes-->
+				  <value>com.niit.model.Supplier</value>
+				  <value>com.niit.model.Category</value>
 			</list>
 			</property>
 

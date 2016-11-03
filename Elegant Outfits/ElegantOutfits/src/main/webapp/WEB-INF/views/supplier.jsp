@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,14 +18,27 @@
 <jsp:include page="header.jsp"></jsp:include><br><br><br><br><br><br><br><br>
 <center>
 <div style="color: black; font-size: 30px">Enter Supplier Details</div>
-<form action="Supplierdetails">
+<form:form action="Supplierdetails" method="get">
 <table width="400px" height="150px">
-<tr><td>Name:</td><td><input type="text" name="suppliername"></td></tr>
-<tr><td>Description:</td><td><input type="textarea" name="supplierdescription"></td></tr>
+
+<tr>
+<td>Id:</td>
+<td><form:input path="supplierid"/></td>
+</tr>
+<tr>
+<td>Name:</td>
+<td><form:input path="suppliername"/></td>
+</tr>
+<tr>
+<td>Address:</td>
+<td><form:input path="supplieraddress"/></td>
+</tr>
 <tr><td></td><td><input type="submit" value="Submit"></td></tr>
 </table>
 
-</form><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</form:form><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
 </center>
  <jsp:include page="footer.jsp"></jsp:include>
 </body>
