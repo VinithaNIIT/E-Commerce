@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
- <%@page isELIgnored="false" %>  
+      <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,32 +12,15 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
  <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
-<title>Edit Category</title>
+<title>Product</title>
 </head>
 <body>
 <jsp:include page="admin.jsp"></jsp:include><br><br><br><br><br><br><br><br>
 <center>
-<div style="color: black; font-size: 30px">Edit Category Details</div>
-<form:form action="/ElegantOutfits/categorysave" >
-<table width="400px" height="150px">
-
-<tr>
-<td>Id:</td>
-<td><form:hidden path="categoryid"/></td>
-</tr>
-<tr>
-<td>Name:</td>
-<td><form:input path="categoryname"/></td>
-</tr>
-<tr>
-<td>Address:</td>
-<td><form:input path="categorydescription"/></td>
-</tr>
-<tr><td></td><td><input type="submit" value="Edit Save"></td></tr>
-</table>
-
-</form:form><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+<form action="productlist">
+<a href="product">Add Product</a>
+<a href="viewproduct">View Product</a>
+</form>
 </center>
  <jsp:include page="footer.jsp"></jsp:include>
 </body>

@@ -62,5 +62,18 @@ public class HomeController {
 	  ModelAndView mv=new ModelAndView("categoryfront");	
 	  return mv;
 	}
+	
+	@RequestMapping("/productfront")
+	public ModelAndView product()
+	{
+	  ModelAndView mv=new ModelAndView("productfront");	
+	  return mv;
+	}
+	@RequestMapping("/Admin")
+	public ModelAndView admin()
+	{
+	  ModelAndView mv=new ModelAndView("admin");	
+	  return mv;
+	}
 
 }

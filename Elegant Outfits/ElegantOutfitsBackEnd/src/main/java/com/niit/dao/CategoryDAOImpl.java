@@ -89,4 +89,17 @@ public class CategoryDAOImpl implements CategoryDAO {
 		
 	}
 
+
+
+	public List<Category> getCategoryList() {
+		Session session=getSession();
+		Transaction tx=session.beginTransaction();
+		String sqlquery="select categoryid from Category";
+		Query query=session.createQuery(sqlquery);
+		
+		List<Category>li=query.list();
+		System.out.println("categoryLIST method"+li);
+		return li;
+	}
+
 }

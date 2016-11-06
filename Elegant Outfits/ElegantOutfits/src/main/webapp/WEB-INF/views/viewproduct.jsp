@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
- <%@page isELIgnored="false" %>  
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
+   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+   <%@page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,33 +13,30 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
  <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
-<title>Edit Category</title>
+<title>Product List</title>
 </head>
 <body>
 <jsp:include page="admin.jsp"></jsp:include><br><br><br><br><br><br><br><br>
 <center>
-<div style="color: black; font-size: 30px">Edit Category Details</div>
-<form:form action="/ElegantOutfits/categorysave" >
-<table width="400px" height="150px">
-
-<tr>
-<td>Id:</td>
-<td><form:hidden path="categoryid"/></td>
-</tr>
-<tr>
-<td>Name:</td>
-<td><form:input path="categoryname"/></td>
-</tr>
-<tr>
-<td>Address:</td>
-<td><form:input path="categorydescription"/></td>
-</tr>
-<tr><td></td><td><input type="submit" value="Edit Save"></td></tr>
+<h1>Product List</h1>
+<table border="2" width="70%" cellpadding="2">
+<tr><th>ProductId</th><th>ProductName</th><th>ProductPrice</th><th>ProductDescription</th><th>SupplierId</th><th>CategoryId</th><th>Edit</th><th>Delete</th></tr>  
+   <c:forEach var="x" items="${list}">   
+   <tr>  
+   <td>${x.productid}</td>  
+   <td><c:out value="${x.productname}"/></td>  
+   <td><c:out value="${x.productprice}"/></td>  
+   <td><c:out value="${x.productdescription}"/></td>  
+   <td><c:out value="${x.supplierid}"/></td> 
+   <td><c:out value="${x.categoryid}"/></td>   
+   <td><a href="editproduct/${x.productid}">Edit</a></td>  
+   <td><a href="deleteproduct/${x.productid}">Delete</a></td>  
+   </tr>  
+   </c:forEach> 
 </table>
-
-</form:form><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-</center>
+<br/>  
+   <a href="Product">Add New Product</a>  
+   </center>
  <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

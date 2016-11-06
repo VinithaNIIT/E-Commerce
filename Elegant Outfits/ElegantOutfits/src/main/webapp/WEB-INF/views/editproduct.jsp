@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
+    pageEncoding="ISO-8859-1"%><%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
  <%@page isELIgnored="false" %>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,26 +12,38 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
  <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
-<title>Edit Category</title>
+<title>Edit Product</title>
 </head>
 <body>
 <jsp:include page="admin.jsp"></jsp:include><br><br><br><br><br><br><br><br>
 <center>
-<div style="color: black; font-size: 30px">Edit Category Details</div>
-<form:form action="/ElegantOutfits/categorysave" >
+<div style="color: black; font-size: 30px">Edit Product Details</div>
+<form:form action="/ElegantOutfits/productsave" >
 <table width="400px" height="150px">
 
 <tr>
 <td>Id:</td>
-<td><form:hidden path="categoryid"/></td>
+<td><form:hidden path="productid"/></td>
 </tr>
 <tr>
 <td>Name:</td>
-<td><form:input path="categoryname"/></td>
+<td><form:input path="productname"/></td>
 </tr>
 <tr>
-<td>Address:</td>
-<td><form:input path="categorydescription"/></td>
+<td>Price:</td>
+<td><form:input path="productprice"/></td>
+</tr>
+<tr>
+<td>Description:</td>
+<td><form:input path="productdescription"/></td>
+</tr>
+<tr>
+<td>SupplierId:</td>
+<td><form:input path="supplierid"/></td>
+</tr>
+<tr>
+<td>CategoryId:</td>
+<td><form:input path="categoryid"/></td>
 </tr>
 <tr><td></td><td><input type="submit" value="Edit Save"></td></tr>
 </table>
@@ -41,5 +52,6 @@
 
 </center>
  <jsp:include page="footer.jsp"></jsp:include>
+
 </body>
 </html>

@@ -15,7 +15,7 @@
 <title>Add Category</title>
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include><br><br><br><br><br><br><br><br>
+<jsp:include page="admin.jsp"></jsp:include><br><br><br><br><br><br><br><br>
 <center>
 <div style="color: black; font-size: 30px">Enter Category Details</div>
 <form:form action="categorydetails" method="get">

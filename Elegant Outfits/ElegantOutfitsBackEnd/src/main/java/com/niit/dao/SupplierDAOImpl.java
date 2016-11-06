@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import com.niit.model.Supplier;
 
 @Repository
@@ -51,7 +52,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 		Supplier s = null;
 		Session session = getSession();
 		// Transaction tx=session.beginTransaction();
-		// Supplier s=session.get(Supplier.class, new String(supplierid));
+		// Supplier s=session.get(Supplier.class,supplierid);
 		String sql_query = "from Supplier where supplierid=:supplierid";
 		Query query = session.createQuery(sql_query);
 		query.setParameter("supplierid", supplierid);
@@ -92,12 +93,24 @@ public class SupplierDAOImpl implements SupplierDAO {
 		System.out.println("getsupplierid data" + s);
 		session.delete(s);
 		/*
-		 * Supplier s=session.load(Supplier.class, new Integer(supplierid));
+		 * Supplier s=session.load(Supplier.class, supplierid);
 		 * System.out.println("deletesupplier method"+s);
 		 */
 		tx.commit();
 		session.close();
 
+	}
+
+	public List<Supplier> getSupplierList() {
+		Session session=getSession();
+		Transaction tx=session.beginTransaction();
+		String sqlquery="select supplierid from Supplier";
+		Query query=session.createQuery(sqlquery);
+		
+		List<Supplier>li=query.list();
+		System.out.println("supplierLIST method"+li);
+		return li;
+		
 	}
 
 }

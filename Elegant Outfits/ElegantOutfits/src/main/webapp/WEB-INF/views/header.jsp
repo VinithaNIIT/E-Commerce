@@ -42,8 +42,10 @@
       </li>
       <li><a href="Aboutus" style="color: black;">About Us</a></li>
        <li><a href="Contactus" style="color: black;">Contact Us</a></li>
-        <li><a href="Supplierfront" style="color: black;">Supplier</a></li>
+       <!--  <li><a href="Supplierfront" style="color: black;">Supplier</a></li>
          <li><a href="categoryfront" style="color: black;">Category</a></li>
+          <li><a href="productfront" style="color: black;">Product</a></li> -->
+            <li><a href="Admin" style="color: black;">Admin</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="Registration" style="color: black;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

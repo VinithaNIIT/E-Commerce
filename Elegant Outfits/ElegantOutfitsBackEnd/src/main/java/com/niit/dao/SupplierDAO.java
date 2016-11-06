@@ -11,5 +11,6 @@ public interface SupplierDAO {
 	public Supplier getSupplierById(String supplierid);
 	public void updateSupplier(Supplier supplier);
 	public void deleteSupplier(String supplierid);
+	public List<Supplier> getSupplierList();
 
 }
