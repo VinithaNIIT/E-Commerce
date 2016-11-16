@@ -17,10 +17,8 @@
 <body>
 <jsp:include page="admin.jsp"></jsp:include><br><br><br><br><br><br><br><br>
 <center>
-<form action="productlist">
 <a href="product">Add Product</a>
 <a href="viewproduct">View Product</a>
-</form>
 </center>
  <jsp:include page="footer.jsp"></jsp:include>
 </body>

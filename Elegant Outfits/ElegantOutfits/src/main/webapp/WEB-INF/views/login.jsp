@@ -13,10 +13,10 @@
  <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
 <title>Login Form</title>
 </head>
-<body style=" margin-top:150px;background-image:url('resources/images/indian_wallpaper.jpg');background-repeat: no-repeat;background-size:cover; ">
+<body style=" margin-top:150px;background-image:url('resources/images/wallpaper2.jpg');background-repeat: no-repeat;background-size:cover;min-height: 100%;position: relative; ">
 <jsp:include page="header.jsp"></jsp:include>
-<div class="container">
-            <form class="form-horizontal" role="form" action="isValidUser" method="post">
+<div class="container" style="float:right">
+            <form class="form-horizontal" role="form" action="isValidUser" method="post"style="float:center">
                 <h2>Login Form</h2>
                 <div class="form-group">
                    

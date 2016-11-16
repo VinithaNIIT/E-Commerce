@@ -69,10 +69,24 @@ public class HomeController {
 	  ModelAndView mv=new ModelAndView("productfront");	
 	  return mv;
 	}
+	
+	@RequestMapping("/adminlogin")
+	public ModelAndView adminlogin()
+	{
+	  ModelAndView mv=new ModelAndView("adminlogin");	
+	  return mv;
+	}
 	@RequestMapping("/Admin")
 	public ModelAndView admin()
 	{
 	  ModelAndView mv=new ModelAndView("admin");	
+	  return mv;
+	}
+	
+	@RequestMapping("/adminloginerror")
+	public ModelAndView adminloginerror()
+	{
+	  ModelAndView mv=new ModelAndView("adminloginerror");	
 	  return mv;
 	}
 

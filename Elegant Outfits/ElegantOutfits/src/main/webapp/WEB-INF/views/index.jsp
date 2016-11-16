@@ -16,7 +16,8 @@
 </script>
 
 </head>
-<body>
+<body >
+<div id="wrapper" style="min-height: 100%;position: relative;">
 
 
 <!-- <a href="#" class="pull-left"><img src="resources/images/logo_1.jpg" height="80px" width="80px" ></a> -->
@@ -159,5 +160,6 @@ You choose your product, order it online,<br> and we deliver it right at your do
 </div>
 </div>
  -->
+ </div>
 </body>
 </html>

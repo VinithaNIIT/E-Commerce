@@ -2,6 +2,8 @@ package com.niit.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import org.springframework.stereotype.Component;
 
@@ -18,6 +20,15 @@ public class Product {
 	private String supplierid;
 	private String categoryid;
 	private int quantity;
+	/*
+	@ManyToOne
+	@JoinColumn(name="categoryid",updatable=false,insertable=false,nullable=false)
+	private Category category;
+	
+	@ManyToOne
+	@JoinColumn(name="supplierid",updatable=false,insertable=false,nullable=false)
+	private Supplier supplier;*/
+	
 	public String getProductid() {
 		return productid;
 	}

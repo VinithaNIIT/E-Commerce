@@ -2,7 +2,10 @@ package com.niit.controller;
 
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,7 +52,7 @@ public class UserController {
 	}*/
 	
 	@RequestMapping("/isValidUser")
-	public ModelAndView validateUser(HttpServletRequest request)
+	public ModelAndView validateUser(HttpServletRequest request,HttpSession session)
 	{
 		String role;
 		String username=request.getParameter("username");
@@ -57,7 +60,8 @@ public class UserController {
 		boolean x=userDAO.validate(username, password);
 		if(x)
 		{
-			return new ModelAndView("welcome");
+			session.setAttribute("username", username);
+			return new ModelAndView("index");
 		}
 		else
 		{
@@ -75,6 +79,15 @@ public class UserController {
 		userDAO.addUser(u);
 		
 		ModelAndView mv=new ModelAndView("registrationsuccess");
+		return mv;
+	}
+	
+	@RequestMapping("/logout1")
+	public ModelAndView logout1(HttpServletRequest request)
+	{
+		ModelAndView mv=new ModelAndView("index");
+		HttpSession session=request.getSession(false);
+		session.invalidate();
 		return mv;
 	}
 

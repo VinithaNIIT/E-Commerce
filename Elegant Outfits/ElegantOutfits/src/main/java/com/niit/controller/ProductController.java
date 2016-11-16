@@ -26,10 +26,11 @@ public class ProductController {
 	
 	@Autowired
 	SupplierDAOImpl supplierDAOImpl;
+	
 	@Autowired
 	ProductDAOImpl productDAOImpl;
 	
-	@RequestMapping("/productlist")
+	/*@RequestMapping("/productlist")
 	public ModelAndView product(@ModelAttribute Product product)
 	{
 		ModelAndView mv=new ModelAndView("product");
@@ -41,7 +42,7 @@ public class ProductController {
 		
 		return mv;
 		
-	}
+	}*/
 	@RequestMapping("/productdetails")
 	public ModelAndView productdetails(@ModelAttribute Product product)
 	{
@@ -56,10 +57,14 @@ public class ProductController {
 		return new ModelAndView("viewproduct","list",list);
 	}
 	@RequestMapping("/product")
-	public ModelAndView addproduct()
+	public ModelAndView addproduct(@ModelAttribute Product product)
 	{
-	  ModelAndView mv=new ModelAndView("product","command",new Product());	
-	  return mv;
+	  ModelAndView mv=new ModelAndView("product","command",new Product());
+	  List<Supplier> supplierlist=supplierDAOImpl.getSupplierList();
+		mv.addObject("supplierlist", supplierlist);
+		List<Category> categorylist=categoryDAOImpl.getCategoryList();
+		mv.addObject("categorylist", categorylist);
+		 return mv;
 	}
 	@RequestMapping(value="/editproduct/{productid}")
 	public ModelAndView editsupplier(@PathVariable String productid)

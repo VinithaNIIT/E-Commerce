@@ -14,8 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.model.Supplier;
 
-@Repository
-@Transactional
+@Repository("supplierDAO")
 public class SupplierDAOImpl implements SupplierDAO {
 
 	@Autowired
@@ -25,17 +24,28 @@ public class SupplierDAOImpl implements SupplierDAO {
 		return sessionFactory.openSession();
 	}
 
-	public void insertSupplier(Supplier supplier) {
-		Session session = getSession();
-		Transaction tx = session.beginTransaction();
-		session.saveOrUpdate(supplier);
-		System.out.println("Inside insertsupplier metho" + supplier);
-		tx.commit();
-		// Serializable id = session.getIdentifier(supplier);
-		session.close();
-		// return (Integer) id;
+	public boolean insertSupplier(Supplier supplier) {
+		try {
+			/*if(get(supplier.getSupplierid()!=null))
+			{
+				return false;
+			}*/
+			Session session = getSession();
+			Transaction tx = session.beginTransaction();
+			session.saveOrUpdate(supplier);
+			tx.commit();
+			// Serializable id = session.getIdentifier(supplier);
+			session.close();
+			return true;
+			// return (Integer) id;
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+			return false;
+		}
 
 	}
+
 
 	public List<Supplier> getSupplier() {
 		Session session = getSession();
@@ -49,61 +59,58 @@ public class SupplierDAOImpl implements SupplierDAO {
 	}
 
 	public Supplier getSupplierById(String supplierid) {
-		Supplier s = null;
+		
 		Session session = getSession();
-		// Transaction tx=session.beginTransaction();
-		// Supplier s=session.get(Supplier.class,supplierid);
-		String sql_query = "from Supplier where supplierid=:supplierid";
-		Query query = session.createQuery(sql_query);
-		query.setParameter("supplierid", supplierid);
-		List<Supplier> list = query.list();
-		if (list.size() > 0) {
-			s = (Supplier) list.get(0);
-		}
-
-		System.out.println("getsupplierid data" + s);
+		//Transaction tx=session.beginTransaction();
+		 Supplier s=session.get(Supplier.class,supplierid);
+		
 		
 		session.close();
 		
 		return s;
 	}
 
-	public void updateSupplier(Supplier supplier) {
-		Session session = getSession();
-		Transaction tx = session.beginTransaction();
-		session.update(supplier);
-		tx.commit();
-		session.close();
+	public boolean updateSupplier(Supplier supplier) {
+		try {
+			/*if(get(supplier.getSupplierid()==null))
+			{
+				return false;
+			}*/
+			Session session = getSession();
+			Transaction tx = session.beginTransaction();
+			session.update(supplier);
+			tx.commit();
+			session.close();
+			return true;
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+			return false;
+		}
 
 	}
 
-	public void deleteSupplier(String supplierid) {
-		Supplier s = null;
-		Session session = getSession();
-		Transaction tx = session.beginTransaction();
-
-		String sql_query = "from Supplier where supplierid=:supplierid";
-		Query query = session.createQuery(sql_query);
-		query.setParameter("supplierid", supplierid);
-		List<Supplier> list = query.list();
-		if (list.size() > 0) {
-			s = (Supplier) list.get(0);
+	public boolean deleteSupplier(String supplierid) {
+		
+		try {
+			Session session = getSession();
+			Transaction tx = session.beginTransaction();
+			Supplier s=session.load(Supplier.class, supplierid);
+			session.delete(s);
+			tx.commit();
+			session.close();
+			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
 		}
-
-		System.out.println("getsupplierid data" + s);
-		session.delete(s);
-		/*
-		 * Supplier s=session.load(Supplier.class, supplierid);
-		 * System.out.println("deletesupplier method"+s);
-		 */
-		tx.commit();
-		session.close();
 
 	}
 
 	public List<Supplier> getSupplierList() {
 		Session session=getSession();
-		Transaction tx=session.beginTransaction();
+		//Transaction tx=session.beginTransaction();
 		String sqlquery="select supplierid from Supplier";
 		Query query=session.createQuery(sqlquery);
 		

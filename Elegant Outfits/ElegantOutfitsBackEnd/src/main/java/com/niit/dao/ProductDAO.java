@@ -6,10 +6,10 @@ import com.niit.model.Product;
 
 public interface ProductDAO {
 	
-	public void addProduct(Product product);
+	public boolean addProduct(Product product);
 	public List<Product> getProduct();
 	public Product getProductById(String productid);
-	public void updateProduct(Product product);
-	public void deleteProduct(String productid);
+	public boolean updateProduct(Product product);
+	public boolean deleteProduct(String productid);
 
 }

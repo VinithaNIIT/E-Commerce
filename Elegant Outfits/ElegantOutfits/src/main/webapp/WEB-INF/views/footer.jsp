@@ -41,15 +41,17 @@
 	</div>
 	</footer> -->
 	
-	<div class="footer " style="background-color:#f65a8c;width:'100%';margin:'auto'; ">
-<div class="text-center center-block" style="background-color:#f65a8c;">
-            <p class="txt-railway"><b>- Elegant Outfits -</b></p>
-            
-            <p>Copyright © 2016,Created by Vinitha</p>
+	<div class="footer " style="background-color:#f65a8c;height:'70%';width:100%;position:absolute;bottom: 0;left:0; ">
+<div  style="background-color:#f65a8c;">
+          <div class="text-center center-block"> <p> <b>- Elegant Outfits -</b></p>
+           <p> Copyright © 2016,Created by Vinitha</p>
+            <!--  </div> 
+            <div > -->
                 <a href="https://www.facebook.com"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
 	            <a href="https://twitter.com"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
 	            <a href="https://plus.google.com"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
-	            
+	          
+	           </div>
 </div>
 </div>
 </body>

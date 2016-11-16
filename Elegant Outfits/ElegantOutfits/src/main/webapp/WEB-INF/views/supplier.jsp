@@ -23,15 +23,15 @@
 
 <tr>
 <td>Id:</td>
-<td><form:input path="supplierid"/></td>
+<td><form:input path="supplierid" required="required"/></td>
 </tr>
 <tr>
 <td>Name:</td>
-<td><form:input path="suppliername"/></td>
+<td><form:input path="suppliername" required="required"/></td>
 </tr>
 <tr>
 <td>Address:</td>
-<td><form:input path="supplieraddress"/></td>
+<td><form:input path="supplieraddress" required="required"/></td>
 </tr>
 <tr><td></td><td><input type="submit" value="Submit"></td></tr>
 </table>

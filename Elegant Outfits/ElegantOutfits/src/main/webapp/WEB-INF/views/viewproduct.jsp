@@ -20,13 +20,14 @@
 <center>
 <h1>Product List</h1>
 <table border="2" width="70%" cellpadding="2">
-<tr><th>ProductId</th><th>ProductName</th><th>ProductPrice</th><th>ProductDescription</th><th>SupplierId</th><th>CategoryId</th><th>Edit</th><th>Delete</th></tr>  
+<tr><th>ProductId</th><th>ProductName</th><th>ProductPrice</th><th>ProductDescription</th><th>Quantity</th><th>SupplierId</th><th>CategoryId</th><th>Edit</th><th>Delete</th></tr>  
    <c:forEach var="x" items="${list}">   
    <tr>  
    <td>${x.productid}</td>  
    <td><c:out value="${x.productname}"/></td>  
    <td><c:out value="${x.productprice}"/></td>  
    <td><c:out value="${x.productdescription}"/></td>  
+  <td><c:out value="${x.quantity }"/></td>
    <td><c:out value="${x.supplierid}"/></td> 
    <td><c:out value="${x.categoryid}"/></td>   
    <td><a href="editproduct/${x.productid}">Edit</a></td>  
@@ -35,7 +36,7 @@
    </c:forEach> 
 </table>
 <br/>  
-   <a href="Product">Add New Product</a>  
+   <a href="product">Add New Product</a>  
    </center>
  <jsp:include page="footer.jsp"></jsp:include>
 </body>

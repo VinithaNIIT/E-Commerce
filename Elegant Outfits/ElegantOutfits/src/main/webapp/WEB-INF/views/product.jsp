@@ -24,19 +24,23 @@
 
 <tr>
 <td>Id:</td>
-<td><form:input path="productid"/></td>
+<td><form:input path="productid" required="required"/></td>
 </tr>
 <tr>
 <td>Name:</td>
-<td><form:input path="productname"/></td>
+<td><form:input path="productname" required="required"/></td>
 </tr>
 <tr>
 <td>Price:</td>
-<td><form:input path="productprice"/></td>
+<td><form:input path="productprice" required="required"/></td>
 </tr>
 <tr>
 <td>Description:</td>
-<td><form:input path="productdescription"/></td>
+<td><form:input path="productdescription" required="required"/></td>
+</tr>
+<tr>
+<td>Quantity:</td>
+<td><form:input path="quantity" required="required"/></td>
 </tr>
 <tr>
 <td>SupplierId:</td>

@@ -1,4 +1,10 @@
 @CHARSET "ISO-8859-1";
+html,body
+{
+	margin:0;
+	padding:0;
+height:100%;
+}
 
 <!--CAROUSEL STYLE STARTS HERE-->
 #myCarousel{padding-top:20px;}

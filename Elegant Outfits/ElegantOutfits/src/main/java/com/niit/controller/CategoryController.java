@@ -2,12 +2,16 @@ package com.niit.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.dao.CategoryDAO;
@@ -21,16 +25,30 @@ public class CategoryController {
 	CategoryDAO categoryDAO;
 	
 	@RequestMapping("/category")
-	public ModelAndView addcategory()
+	public ModelAndView addcategory( )
 	{
-	  ModelAndView mv=new ModelAndView("category","command",new Category());	
-	  return mv;
-	}
-	@RequestMapping("/categorydetails")
-	public ModelAndView categorydetails(@ModelAttribute Category category )
+		 ModelAndView mv=new ModelAndView("category","command",new Category());
+		
+	
+		
+		return mv;
+	}		
+	@RequestMapping(value="/categorydetails",method=RequestMethod.POST)
+	public String categorydetails(@ModelAttribute("category")@Valid Category category ,BindingResult result)
 	{
-		categoryDAO.insertCategory(category);
-		return new ModelAndView("redirect:/viewcategory");
+		String returnval="redirect:/viewcategory";
+		if(result.hasErrors())
+		{
+			System.out.println("Hibernate validation");
+			/*return new ModelAndView("redirect:/category");*/
+			returnval="redirect:/category";
+			return returnval;
+		}
+		else{
+		boolean status=categoryDAO.insertCategory(category);
+		return returnval;
+		}
+		
 		
 	}
 	@RequestMapping("/viewcategory")

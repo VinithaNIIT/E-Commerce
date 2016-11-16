@@ -29,6 +29,7 @@ confirm_password.onkeyup = validatePassword;
 </script>
 </head>
 <body style="background-image:url('resources/images/12.jpg');background-repeat: no-repeat;background-size:cover; ">
+<div id="wrapper" style="min-height: 100%;position: relative;">
 <jsp:include page="header.jsp"></jsp:include>
 <div class="container" >
             <form class="form-horizontal" role="form" action="Registrationsuccess" method="post" >
@@ -60,7 +61,7 @@ confirm_password.onkeyup = validatePassword;
                  
                     <div class="col-sm-9" style="margin-left: 5em;
     margin-bottom: 1em;" >
-                        <input type="password" id="password" name="password" placeholder="Password" class="form-control" required>
+                        <input type="password" id="password" name="password" placeholder="Password" class="form-control" required >
                     </div>
                 </div>
                  <div class="form-group">
@@ -92,5 +93,6 @@ confirm_password.onkeyup = validatePassword;
            </form>
         </div> <!-- ./container -->
         <jsp:include page="footer.jsp"></jsp:include>
+        </div>
 </body>
 </html>

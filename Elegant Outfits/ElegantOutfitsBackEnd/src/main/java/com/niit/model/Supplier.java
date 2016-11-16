@@ -1,10 +1,15 @@
 package com.niit.model;
 
 import java.io.Serializable;
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,6 +20,16 @@ public class Supplier implements Serializable {
 	private String supplierid;
 	private String suppliername;
 	private String supplieraddress;
+	
+/*private Set<Product> products;
+	
+	@OneToMany(mappedBy="supplier",fetch=FetchType.EAGER)
+	public Set<Product> getProducts() {
+		return products;
+	}
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}*/
 	public String getSupplierid() {
 		return supplierid;
 	}

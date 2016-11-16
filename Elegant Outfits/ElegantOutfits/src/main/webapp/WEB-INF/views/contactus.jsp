@@ -13,7 +13,7 @@
  <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
 <title>Contact Us</title>
 </head>
-<body>
+<body >
 <jsp:include page="header.jsp"></jsp:include>
 <jsp:include page="footer.jsp"></jsp:include>
 </body>

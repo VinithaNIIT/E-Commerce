@@ -12,8 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.model.Product;
 
-@Repository
-@Transactional
+@Repository("productDAO")
 public class ProductDAOImpl implements ProductDAO {
 	
 	@Autowired
@@ -23,14 +22,21 @@ public class ProductDAOImpl implements ProductDAO {
 		return sessionFactory.openSession();
 	}
 
-	public void addProduct(Product product) {
+	public boolean addProduct(Product product) {
 		
 		
-			Session session=getSession();
-			Transaction tx=session.beginTransaction();
-			session.saveOrUpdate(product);
-			tx.commit();
-			session.close();
+			try {
+				Session session=getSession();
+				Transaction tx=session.beginTransaction();
+				session.saveOrUpdate(product);
+				tx.commit();
+				session.close();
+				return true;
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return false;
+			}
 		
 	}
 
@@ -55,16 +61,23 @@ public class ProductDAOImpl implements ProductDAO {
 		
 	}
 
-	public void updateProduct(Product product) {
-		Session session=getSession();
-		Transaction tx=session.beginTransaction();
-		session.update(product);
-		tx.commit();
-		session.close();
+	public boolean updateProduct(Product product) {
+		try {
+			Session session=getSession();
+			Transaction tx=session.beginTransaction();
+			session.update(product);
+			tx.commit();
+			session.close();
+			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
 		
 	}
 
-	public void deleteProduct(String productid) {
+	public boolean deleteProduct(String productid) {
 		/*Product pro = null;
 		Session session = getSession();
 		Transaction tx = session.beginTransaction();
@@ -77,14 +90,23 @@ public class ProductDAOImpl implements ProductDAO {
 			pro = (Product) list.get(0);
 		}*/
 
-		Session session=getSession();
-		Product p=session.get(Product.class, productid);
+		try {
+			Session session=getSession();
+			Transaction tx = session.beginTransaction();
+
+			Product p=session.get(Product.class, productid);
+			
+			session.delete(p);
+			tx.commit();
+			session.close();
+			return true;
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+			return false;
+		}
 		
-		session.delete(p);
-		session.close();
 		
-		/*tx.commit();
-		session.close();*/
 		
 	}
 

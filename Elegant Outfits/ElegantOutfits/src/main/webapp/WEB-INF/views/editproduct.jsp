@@ -38,6 +38,10 @@
 <td><form:input path="productdescription"/></td>
 </tr>
 <tr>
+<td>Quantity:</td>
+<td><form:input path="quantity"/></td>
+</tr>
+<tr>
 <td>SupplierId:</td>
 <td><form:input path="supplierid"/></td>
 </tr>

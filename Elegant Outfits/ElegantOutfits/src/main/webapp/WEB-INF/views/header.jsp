@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+ <%@page isELIgnored="false" %>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,7 +27,7 @@
 
 <!-- <a href="#" class="pull-left"><img src="resources/images/logo_1.jpg" height="80px" width="80px" ></a> -->
 
-
+<div id="header" >
 <nav class="navbar navbar-inverse navbar-fixed-top"> 
   <div class="container-fluid">
     <div class="navbar-header">
@@ -49,11 +52,20 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="Registration" style="color: black;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="Login" style="color: black;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li>
+      <c:if test="${empty username }">
+        <a href="Login" style="color: black;"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+      </c:if>
+     <c:if test="${not empty username}">
+     Hi,<%=session.getAttribute("username")%>
+      <a href="logout1" style="color: black;"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
+     </c:if>
+      
+      </li>
     </ul>
   </div>
 </nav>
-
+</div>
 
 </body>
 </html>
