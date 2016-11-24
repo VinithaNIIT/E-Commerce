@@ -1,15 +1,19 @@
 package com.niit.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Component
 @Entity
-public class Product {
+public class Product implements Serializable {
 
 	@Id
 	private String productid;
@@ -20,6 +24,8 @@ public class Product {
 	private String supplierid;
 	private String categoryid;
 	private int quantity;
+	@Transient
+	private MultipartFile file;
 	/*
 	@ManyToOne
 	@JoinColumn(name="categoryid",updatable=false,insertable=false,nullable=false)
@@ -71,6 +77,12 @@ public class Product {
 	}
 	public void setProductprice(float productprice) {
 		this.productprice = productprice;
+	}
+	public MultipartFile getFile() {
+		return file;
+	}
+	public void setFile(MultipartFile file) {
+		this.file = file;
 	}
 	@Override
 	public String toString() {

@@ -10,8 +10,17 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
 <title>Insert title here</title>
+<!--  <script>
+	$('#myCarousel').carousel({
+		interval: 1000
+	})
+</script> -->
+
+
 </head>
 <body>
+<!-- <div id="wrapper" style="min-height: 100%;position: relative;"> -->
+<div id="header" >
 <nav class="navbar navbar-inverse navbar-fixed-top"> 
   <div class="container-fluid">
     <div class="navbar-header">
@@ -19,16 +28,21 @@
       <a href="#" class="pull-left"><img src="resources/images/logo_1.jpg" height="60px" width="80px" ></a> 
     </div>
     <ul class="nav navbar-nav" style="font-family: sans-serif;text-transform: uppercase;">
-     <li  ><a href="Index" class="active" style="color: black;">Home</a></li> 
+     <li  ><a href="Admin" class="active" style="color: black;">Home</a></li> 
         <li><a href="Supplierfront" style="color: black;">Supplier</a></li>
          <li><a href="categoryfront" style="color: black;">Category</a></li>
           <li><a href="productfront" style="color: black;">Product</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-           <li><a href="Login" style="color: black;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+           <li> <a href="logout" style="color: black;"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
- <%-- <jsp:include page="footer.jsp"></jsp:include> --%>
+</div>
+
+
+
+
+  <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

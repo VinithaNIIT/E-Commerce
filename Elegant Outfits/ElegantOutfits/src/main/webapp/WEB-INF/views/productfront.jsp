@@ -14,12 +14,13 @@
  <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
 <title>Product</title>
 </head>
-<body>
+<body style="background-image:url('resources/images/admin4.jpg');background-repeat: no-repeat;background-size:cover;min-height: 100%;position: relative; ">
 <jsp:include page="admin.jsp"></jsp:include><br><br><br><br><br><br><br><br>
-<center>
-<a href="product">Add Product</a>
-<a href="viewproduct">View Product</a>
-</center>
+<div style="margin-top:30px;">
+
+<a href="product"style="font-size: 30px;margin-left: 30px;">Add Product</a><br><br>
+<a href="viewproduct"style="font-size: 30px;margin-left: 30px;">View Product</a>
+</div>
  <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

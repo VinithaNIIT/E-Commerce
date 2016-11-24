@@ -1,6 +1,8 @@
 package com.niit.controller;
 
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -9,8 +11,9 @@ import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.niit.dao.UserDAOImpl;
 import com.niit.model.User;
 
@@ -19,6 +22,8 @@ public class UserController {
 	
 	@Autowired
 	UserDAOImpl userDAO;
+	
+	
 	
 	/*@RequestMapping("/isValidUser")
 	public ModelAndView validateUser(HttpServletRequest request)
@@ -90,5 +95,11 @@ public class UserController {
 		session.invalidate();
 		return mv;
 	}
+	
+	
+	
+	
+		
+
 
 }

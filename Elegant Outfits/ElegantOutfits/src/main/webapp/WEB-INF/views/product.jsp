@@ -19,7 +19,7 @@
 <jsp:include page="admin.jsp"></jsp:include><br><br><br><br><br><br><br><br>
 <center>
 <div style="color: black; font-size: 30px">Enter Product Details</div>
-<form:form action="productdetails" method="get" commandName="command">
+<form:form action="productdetails" method="post" commandName="command" enctype="multipart/form-data">
 <table width="400px" height="150px">
 
 <tr>
@@ -70,6 +70,10 @@
 
 </td>
 
+</tr>
+<tr>
+<td>File to Upload:</td>
+<td><form:input type="file" path="file"/></td>
 </tr>
 <tr><td></td><td><input type="submit" value="Submit"></td></tr>
 </table>

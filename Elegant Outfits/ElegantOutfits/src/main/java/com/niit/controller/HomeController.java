@@ -1,17 +1,47 @@
 package com.niit.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.niit.dao.CategoryDAOImpl;
+import com.niit.model.Category;
 
 @Controller
 public class HomeController {
 	
 	
+	@Autowired
+	CategoryDAOImpl categoryDAOImpl;
+	
+	@Autowired
+	Category category;
 	@RequestMapping("/")
-	public ModelAndView index()
+	public ModelAndView index(HttpSession session)
 	{
-	  ModelAndView mv=new ModelAndView("index");	
+	  ModelAndView mv=new ModelAndView("index");
+	// session.setAttribute("category",category);
+	  List<Category> categorylist=categoryDAOImpl.getCategory();
+	  System.out.println("category list"+categorylist);
+		mv.addObject("categorylist", categorylist);
+		//session.setAttribute("categorylist", categorylist);
+	  return mv;
+	}
+	
+	@RequestMapping("/header")
+	public ModelAndView header()
+	{
+	  ModelAndView mv=new ModelAndView("header");
+	// session.setAttribute("category",category);
+	  List<Category> categorylist=categoryDAOImpl.getCategory();
+	  System.out.println("category list"+categorylist);
+		mv.addObject("categorylist", categorylist);
+		//session.setAttribute("categorylist", categorylist);
 	  return mv;
 	}
 	
@@ -79,7 +109,7 @@ public class HomeController {
 	@RequestMapping("/Admin")
 	public ModelAndView admin()
 	{
-	  ModelAndView mv=new ModelAndView("admin");	
+	  ModelAndView mv=new ModelAndView("adminhome");	
 	  return mv;
 	}
 	

@@ -36,13 +36,19 @@
     </div>
     <ul class="nav navbar-nav" style="font-family: sans-serif;text-transform: uppercase;">
      <li  ><a href="Index" class="active" style="color: black;">Home</a></li> 
-      <li class="dropdown" ><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: black;">Product <span class="caret"></span></a>
+      <li class="dropdown" >
+      
+      <a class="dropdown-toggle" data-toggle="dropdown"  href="#" style="color: black;">Product <span class="caret"></span></a>
         <ul class="dropdown-menu" >
-          <li><a href="#" style="color: black;">Indian Wear</a></li>
-          <li><a href="#" style="color: black;">Western Wear</a></li>
-          <li><a href="#" style="color: black;">Sleepwear</a></li>
+         <c:forEach var="category" items="${categorylist}">
+          <li><a href="/ElegantOutfits/viewproductdetails/${category.categoryid}" style="color: black;">${category.categoryname}</a></li>
+          </c:forEach>
+          <!-- <li><a href="viewproductdetails" style="color: black;">Western Wear</a></li>
+          <li><a href="viewproductdetails" style="color: black;">Sleepwear</a></li> -->
         </ul>
       </li>
+      
+      
       <li><a href="Aboutus" style="color: black;">About Us</a></li>
        <li><a href="Contactus" style="color: black;">Contact Us</a></li>
        <!--  <li><a href="Supplierfront" style="color: black;">Supplier</a></li>
@@ -51,10 +57,11 @@
             <li><a href="Admin" style="color: black;">Admin</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="Registration" style="color: black;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+     
       <li>
       <c:if test="${empty username }">
         <a href="Login" style="color: black;"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+         <li><a href="Registration" style="color: black;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       </c:if>
      <c:if test="${not empty username}">
      Hi,<%=session.getAttribute("username")%>

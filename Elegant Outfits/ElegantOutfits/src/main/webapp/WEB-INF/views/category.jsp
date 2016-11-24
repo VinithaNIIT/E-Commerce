@@ -28,7 +28,7 @@ color: #ff0000;
 }
 </style>
 </head>
-<body>
+<body style=" margin-top:150px;background-image:url('resources/images/admin1.jpg');background-repeat: no-repeat;background-size:cover;min-height: 100%;position: relative; ">
 <jsp:include page="admin.jsp"></jsp:include><br><br><br><br><br><br><br><br>
 <center>
 <div style="color: black; font-size: 30px">Enter Category Details</div>

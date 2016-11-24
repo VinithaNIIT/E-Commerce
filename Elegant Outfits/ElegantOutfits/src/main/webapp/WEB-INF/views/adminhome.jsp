@@ -1,11 +1,12 @@
-<%@ page isELIgnored="false" %>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Elegant Outfits</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -17,16 +18,30 @@
 		interval: 1000
 	})
 </script>
-
 </head>
-<body >
-
-  
+<body>
+<div id="header" >
+<nav class="navbar navbar-inverse navbar-fixed-top"> 
+  <div class="container-fluid">
+    <div class="navbar-header">
+     <!--  <a class="navbar-brand" href="#">Elegant Outfits</a> -->
+      <a href="#" class="pull-left"><img src="resources/images/logo_1.jpg" height="60px" width="80px" ></a> 
+    </div>
+    <ul class="nav navbar-nav" style="font-family: sans-serif;text-transform: uppercase;">
+     <li  ><a href="Admin" class="active" style="color: black;">Home</a></li> 
+        <li><a href="Supplierfront" style="color: black;">Supplier</a></li>
+         <li><a href="categoryfront" style="color: black;">Category</a></li>
+          <li><a href="productfront" style="color: black;">Product</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+           <li><a href="logout" style="color: black;"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+</div>
 <div id="wrapper" style="min-height: 100%;position: relative;">
 
- <%-- <jsp:include page="header"></jsp:include> --%>
-<%-- <%@ include file="./header.jsp" %> --%>
-<c:import url="/header"></c:import>
+
 <div class="container">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -72,67 +87,7 @@
     </a>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-6" >
-  <marquee  width="450px"  direction="up" onmouseover="stop()" onmouseout="start()" scrollamount="2"style="color:black;margin-left: 100px;padding:20px">
-  <center>
-Online Shopping: convenient, fast and affordable!<br>
-Shopping is fun and exhilarating and more so when<br> you can shop 24x7 without leaving the comfort of home.
-<br>
-Elegant Outfits the hottest online fashion destination of all times!
-<br>
-'Fashion' is definitely more accessible with Elegant Outfits.
-<br>
-Avail added online shopping benefits
-<br>
-You choose your product, order it online,<br> and we deliver it right at your doorstep anywhere in India.<br> You just need to pay for the product.
-
-<%-- <% List<Category> l=(List<Category>)request.getAttribute("categorylist");
-		for(Category c:l)
-		  {
-		  out.println(c);
-		  }%> --%>
-</center></marquee>
-  </div>
-  <div class="col-md-6"><video width="400" controls>
-  <source src="resources/videos/Women-Ethnic Wear.mp4" type="video/mp4">
-</video></div>
 </div>
-
-
-<div class="row" style="text-align: center">
- <div class="col-md-4 " >
-
- <a href="#" title="Indian Wear">
-  <figure >
-   <img class="img-responsive fa-3x social" src="resources/images/indian11.jpg" alt="Indian Wear" width="350px" height="80px" style="margin-left:20px" />
-   <figcaption >Indian Wear</p></figcaption>
-   </figure>
-   </a>
-   
- </div>
- <div class="col-md-4">
- <a href="#" title="Western Wear">
- <figure >
-   <img class="img-responsive fa-3x social" src="resources/images/western_1.jpg" alt="Western Wear" width="310px" height="80px" style="margin-left:20px" />
-   <figcaption><p>Western Wear</p></figcaption>
-   </figure>
-   </a>
- </div>
-
- <div class="col-md-4">
- <a href="#" title="SleepWear">
- <figure >
-   <img class="img-responsive fa-3x social" src="resources/images/sleepwear_1.jpg" alt="Sleepwear" width="310px" height="80px"  />
-   <figcaption><p>SleepWear</p></figcaption>
-   </figure>
-   </a>
- </div>
- 
-</div>
-Category list: ${categorylist}
- <jsp:include page="footer.jsp"></jsp:include>
-
- </div>
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

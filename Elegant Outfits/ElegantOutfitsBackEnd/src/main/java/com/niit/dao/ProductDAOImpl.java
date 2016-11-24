@@ -52,6 +52,8 @@ public class ProductDAOImpl implements ProductDAO {
 		
 	}
 	
+	
+	
 	public Product getProductById(String productid) {
 		
 		Session session=getSession();
@@ -108,6 +110,29 @@ public class ProductDAOImpl implements ProductDAO {
 		
 		
 		
+	}
+
+	public List<Product> getAllProduct() {
+		
+		Session session=getSession();
+		String sql_query="from Product";
+		Query query=session.createQuery(sql_query);
+		List<Product>list=query.list();
+		session.close();
+		return list;
+	}
+	
+
+
+	public List<Product> getAllProductByCategoryId(String categoryid) {
+		Session session=getSession();
+		String sql_query="from Product where categoryid=:categoryid";
+		Query query=session.createQuery(sql_query);
+		query.setParameter("categoryid", categoryid);
+		List<Product>list=query.list();
+		System.out.println("DAO Productdetails"+list);
+		session.close();
+		return list;
 	}
 
 }

@@ -11,14 +11,14 @@ import org.springframework.stereotype.Component;
 @Component
 @Entity
 public class Category {
-	@NotEmpty(message="Id cannot be null")
+	//@NotEmpty(message="Id cannot be null")
 	@Id
 	private String categoryid;
-	@NotNull(message="CategoryName cannot be null")
-	@Range(min=3,max=30,message="Your name should be between 3 - 30 characters.")
+	//@NotNull(message="CategoryName cannot be null")
+	//@Range(min=3,max=30,message="Your name should be between 3 - 30 characters.")
 	private String categoryname;
-	@NotNull(message="CategoryDescription cannot be null")
-	@Size(min=5,max=50,message="Your name should be between 5 - 50 characters.")
+	//@NotNull(message="CategoryDescription cannot be null")
+	//@Size(min=5,max=50,message="Your name should be between 5 - 50 characters.")
 	private String categorydescription;
 	/*private Set<Product> products;
 	

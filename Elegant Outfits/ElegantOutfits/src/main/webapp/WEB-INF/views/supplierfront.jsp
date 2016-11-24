@@ -14,12 +14,12 @@
  <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
 <title>Supplier</title>
 </head>
-<body>
+<body style="background-image:url('resources/images/admin5.jpg');background-repeat: no-repeat;position: relative;background-size:cover; ">
 <jsp:include page="admin.jsp"></jsp:include><br><br><br><br><br><br><br><br>
-<center>
-<a href="supplier">Add Supplier</a>
-<a href="viewsupplier">View Supplier</a>
-</center>
+
+<a href="supplier"style="font-size: 30px;margin-left: 30px;">Add Supplier</a><br><br>
+<a href="viewsupplier"style="font-size: 30px;margin-left: 30px;">View Supplier</a>
+
  <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

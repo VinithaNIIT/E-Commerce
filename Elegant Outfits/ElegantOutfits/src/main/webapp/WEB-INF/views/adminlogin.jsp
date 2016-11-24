@@ -17,13 +17,17 @@
 <title>Admin Login Form</title>
 </head>
 <body style=" margin-top:150px;background-image:url('resources/images/wallpaper2.jpg');background-repeat: no-repeat;background-size:cover;min-height: 100%;position: relative; ">
-<jsp:include page="header.jsp"></jsp:include>
-
+<%-- <jsp:include page="header.jsp"></jsp:include> --%>
+<c:import url="/header"></c:import>
 <div class="container" style="float:left;" >
             <form class="form-horizontal" role="form" action="<c:url value='/perform_login'/>" method="post" style="float:right">
-                <h2 style="float:left;" >Admin Login Form</h2>
+                
                 <div class="form-group">
-                   
+                <div class="col-sm-9" style="margin-left: 5em;
+    margin-bottom: 1em;" >
+               <h2 style="font-size:20px;">ADMIN LOGIN FORM</h2>
+                   <!-- <h2 style="padding:-60px;">Admin Login Form</h2> -->
+                   </div>
                     <div class="col-sm-9" style="margin-left: 5em;
     margin-bottom: 1em;" >
                         <input type="text" id="UserName" name="username" placeholder="UserName" class="form-control" autofocus required>

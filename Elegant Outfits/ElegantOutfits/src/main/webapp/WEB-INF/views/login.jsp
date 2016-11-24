@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+     <%@ page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +16,8 @@
 <title>Login Form</title>
 </head>
 <body style=" margin-top:150px;background-image:url('resources/images/wallpaper2.jpg');background-repeat: no-repeat;background-size:cover;min-height: 100%;position: relative; ">
-<jsp:include page="header.jsp"></jsp:include>
+<%-- <jsp:include page="header.jsp"></jsp:include> --%>
+<c:import url="/header"></c:import>
 <div class="container" style="float:right">
             <form class="form-horizontal" role="form" action="isValidUser" method="post"style="float:center">
                 <h2>Login Form</h2>
