@@ -13,14 +13,17 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
+  <c:url value="/resources/bootstrap/css" var="a"/>
+  <%--  <c:url value="/resources/css1" var="a"/> --%>
+   <c:url value="/resources/images" var="x"/>
+  <%--  <link rel="stylesheet" href="${a}/style.css"/> --%>
    
+    <link rel="stylesheet" href=${a}/style.css/>
    <script>
 	$('#myCarousel').carousel({
 		interval: 1000
 	})
 </script>
-
 </head>
 <body>
 
@@ -32,7 +35,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
      <!--  <a class="navbar-brand" href="#">Elegant Outfits</a> -->
-      <a href="#" class="pull-left"><img src="resources/images/logo_1.jpg" height="60px" width="80px" ></a> 
+      <a href="#" class="pull-left"><img src="${x}/logo_1.jpg" height="60px" width="80px" ></a> 
     </div>
     <ul class="nav navbar-nav" style="font-family: sans-serif;text-transform: uppercase;">
      <li  ><a href="Index" class="active" style="color: black;">Home</a></li> 
@@ -41,7 +44,7 @@
       <a class="dropdown-toggle" data-toggle="dropdown"  href="#" style="color: black;">Product <span class="caret"></span></a>
         <ul class="dropdown-menu" >
          <c:forEach var="category" items="${categorylist}">
-          <li><a href="/ElegantOutfits/viewproductdetails/${category.categoryid}" style="color: black;">${category.categoryname}</a></li>
+          <li><a href="<c:url value='/viewproductdetails/${category.categoryid}'/>">${category.categoryname}</a></li>
           </c:forEach>
           <!-- <li><a href="viewproductdetails" style="color: black;">Western Wear</a></li>
           <li><a href="viewproductdetails" style="color: black;">Sleepwear</a></li> -->
@@ -51,9 +54,6 @@
       
       <li><a href="Aboutus" style="color: black;">About Us</a></li>
        <li><a href="Contactus" style="color: black;">Contact Us</a></li>
-       <!--  <li><a href="Supplierfront" style="color: black;">Supplier</a></li>
-         <li><a href="categoryfront" style="color: black;">Category</a></li>
-          <li><a href="productfront" style="color: black;">Product</a></li> -->
             <li><a href="Admin" style="color: black;">Admin</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
@@ -65,11 +65,13 @@
       </c:if>
      <c:if test="${not empty username}">
      Hi,<%=session.getAttribute("username")%>
-      <a href="logout1" style="color: black;"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
+      <a href="/ElegantOutfits/logout1" style="color: black;"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
      </c:if>
       
       </li>
     </ul>
+
+   
   </div>
 </nav>
 </div>

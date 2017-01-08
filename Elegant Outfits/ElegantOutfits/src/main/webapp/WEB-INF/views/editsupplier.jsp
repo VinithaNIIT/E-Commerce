@@ -7,19 +7,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<c:url value="/resources/bootstrap/css" var="a"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
- <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
+ <link rel="stylesheet" href=${a}/style.css/>
 <title>Edit Supplier</title>
 </head>
 <body>
 <jsp:include page="admin.jsp"></jsp:include><br><br><br><br><br><br><br><br>
 <center>
 <div style="color: black; font-size: 30px">Edit Supplier Details</div>
-<form:form action="/ElegantOutfits/editsave"  method="post">
+<form:form action="/ElegantOutfits/Admin_editsave"  method="post">
 <table width="400px" height="150px">
 
 <tr>

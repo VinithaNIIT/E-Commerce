@@ -7,19 +7,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <!-- All the files that are required -->
+<c:url value="/resources/bootstrap/css" var="a"/>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
- <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
+ <link rel="stylesheet" href=${a}/style.css/>
 <title>Login Form</title>
 </head>
 <body style=" margin-top:150px;background-image:url('resources/images/wallpaper2.jpg');background-repeat: no-repeat;background-size:cover;min-height: 100%;position: relative; ">
 <%-- <jsp:include page="header.jsp"></jsp:include> --%>
 <c:import url="/header"></c:import>
 <div class="container" style="float:right">
-            <form class="form-horizontal" role="form" action="isValidUser" method="post"style="float:center">
+            <form class="form-horizontal" role="form" action="/ElegantOutfits/isValidUser" method="post"style="float:center">
                 <h2>Login Form</h2>
                 <div class="form-group">
                    

@@ -19,7 +19,7 @@ public class Product implements Serializable {
 	private String productid;
 	private String productname;
 	private String productdescription;
-	private float productprice;
+	private Long productprice;
 	
 	private String supplierid;
 	private String categoryid;
@@ -72,10 +72,10 @@ public class Product implements Serializable {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public float getProductprice() {
+	public Long getProductprice() {
 		return productprice;
 	}
-	public void setProductprice(float productprice) {
+	public void setProductprice(Long productprice) {
 		this.productprice = productprice;
 	}
 	public MultipartFile getFile() {

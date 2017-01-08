@@ -5,12 +5,13 @@
 <title>Elegant Outfits</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <c:url value="/resources/bootstrap/css" var="a"/>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
+  <link rel="stylesheet" href=${a}/style.css/>
    <!-- <link rel="stylesheet" href="resources/bootstrap/css/cssbootstrap.css"/> -->
    <script>
 	$('#myCarousel').carousel({
@@ -86,12 +87,6 @@ Elegant Outfits the hottest online fashion destination of all times!
 Avail added online shopping benefits
 <br>
 You choose your product, order it online,<br> and we deliver it right at your doorstep anywhere in India.<br> You just need to pay for the product.
-
-<%-- <% List<Category> l=(List<Category>)request.getAttribute("categorylist");
-		for(Category c:l)
-		  {
-		  out.println(c);
-		  }%> --%>
 </center></marquee>
   </div>
   <div class="col-md-6"><video width="400" controls>
@@ -130,7 +125,7 @@ You choose your product, order it online,<br> and we deliver it right at your do
  </div>
  
 </div>
-Category list: ${categorylist}
+
  <jsp:include page="footer.jsp"></jsp:include>
 
  </div>

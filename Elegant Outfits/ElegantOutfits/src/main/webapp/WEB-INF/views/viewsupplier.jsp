@@ -7,12 +7,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<c:url value="/resources/bootstrap/css" var="a"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
- <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
+ <link rel="stylesheet" href=${a}/style.css/>
 <title>Insert title here</title>
 </head>
 <body>
@@ -26,13 +27,13 @@
    <td>${x.supplierid}</td>  
    <td><c:out value="${x.suppliername}"/></td>  
    <td><c:out value="${x.supplieraddress}"/></td>  
-   <td><a href="editsupplier1/${x.supplierid}">Edit</a></td>  
-   <td><a href="deletesupplier/${x.supplierid}">Delete</a></td>  
+   <td><a href="Admin_editsupplier1/${x.supplierid}">Edit</a></td>  
+   <td><a href="Admin_deletesupplier/${x.supplierid}">Delete</a></td>  
    </tr>  
    </c:forEach>  
    </table>  
    <br/>  
-   <a href="supplier">Add New Supplier</a>  
+   <a href="Admin_supplier">Add New Supplier</a>  
 </center>
  <jsp:include page="footer.jsp"></jsp:include>
 

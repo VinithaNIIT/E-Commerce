@@ -9,6 +9,8 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +18,7 @@ import com.niit.model.User;
 
 @Repository("userDAO")
 public class UserDAOImpl implements UserDAO {
+	private static Logger log=LoggerFactory.getLogger(UserDAOImpl.class);
 	
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -37,7 +40,8 @@ public class UserDAOImpl implements UserDAO {
 	}*/
 	public boolean validate(String username,String password)
 	{
-		 Session session = sessionFactory.openSession();
+		log.debug("Starting of the Method validate");
+		 Session session = getSession();
 		  Transaction tx = session.beginTransaction();
 		  boolean userfound=false;
 		  String sql_query="from User where username=:username and password=:password";
@@ -51,17 +55,20 @@ public class UserDAOImpl implements UserDAO {
 		  }
 		  tx.commit();
 		  session.close();
+		  log.debug("Ending of the Method validate");
 		return userfound;
 	}
 	
 	
 	 public int addUser(User u){
-		 Session session = sessionFactory.openSession();
+		 log.debug("Starting of the Method addUser");
+		 Session session = getSession();
 		  Transaction tx = session.beginTransaction();
 		  session.saveOrUpdate(u);
 		  tx.commit();
 		  Serializable id = session.getIdentifier(u);
 		  session.close();
+		  log.debug("Ending of the Method addUser");
 		  return (Integer) id;
 		
 	 }

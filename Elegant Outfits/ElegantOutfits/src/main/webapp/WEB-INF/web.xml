@@ -10,8 +10,8 @@
   <param-value>/WEB-INF/dispatcher-servlet.xml,/WEB-INF/spring-security.xml</param-value>
   </context-param>
   <filter>
-      <filter-name>springSecurityFilterChain</filter-name>
-      <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+      <filter-name>springSecurityFilterChain<!-- Instance of the DelegatingFilterProxy --></filter-name>
+      <filter-class>org.springframework.web.filter.DelegatingFilterProxy<!-- Classname --></filter-class>
 </filter>   
 <filter-mapping>
       <filter-name>springSecurityFilterChain</filter-name>
@@ -28,5 +28,13 @@
 <servlet-mapping>  
     <servlet-name>dispatcher</servlet-name>  
     <url-pattern>/</url-pattern>  
+     
 </servlet-mapping>
+
+<session-config>
+<session-timeout>
+30
+</session-timeout>
+</session-config>
+
 </web-app>

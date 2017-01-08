@@ -6,20 +6,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<c:url value="/resources/bootstrap/css" var="a"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
- <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
+ <link rel="stylesheet" href=${a}/style.css/>
 <title>Product</title>
 </head>
 <body style="background-image:url('resources/images/admin4.jpg');background-repeat: no-repeat;background-size:cover;min-height: 100%;position: relative; ">
 <jsp:include page="admin.jsp"></jsp:include><br><br><br><br><br><br><br><br>
 <div style="margin-top:30px;">
 
-<a href="product"style="font-size: 30px;margin-left: 30px;">Add Product</a><br><br>
-<a href="viewproduct"style="font-size: 30px;margin-left: 30px;">View Product</a>
+<a href="Admin_product"style="font-size: 30px;margin-left: 30px;">Add Product</a><br><br>
+<a href="Admin_viewproduct"style="font-size: 30px;margin-left: 30px;">View Product</a>
 </div>
  <jsp:include page="footer.jsp"></jsp:include>
 </body>

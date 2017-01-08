@@ -7,12 +7,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<c:url value="/resources/bootstrap/css" var="a"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
- <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
+ <link rel="stylesheet" href=${a}/style.css/>
 <title>Product List</title>
 </head>
 <body>
@@ -30,13 +31,13 @@
   <td><c:out value="${x.quantity }"/></td>
    <td><c:out value="${x.supplierid}"/></td> 
    <td><c:out value="${x.categoryid}"/></td>   
-   <td><a href="editproduct/${x.productid}">Edit</a></td>  
-   <td><a href="deleteproduct/${x.productid}">Delete</a></td>  
+   <td><a href="Admin_editproduct/${x.productid}">Edit</a></td>  
+   <td><a href="Admin_deleteproduct/${x.productid}">Delete</a></td>  
    </tr>  
    </c:forEach> 
 </table>
 <br/>  
-   <a href="product">Add New Product</a>  
+   <a href="Admin_product">Add New Product</a>  
    </center>
  <jsp:include page="footer.jsp"></jsp:include>
 </body>

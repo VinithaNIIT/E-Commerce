@@ -14,8 +14,13 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import com.niit.model.BillingAddress;
+import com.niit.model.Cart;
 import com.niit.model.Category;
+import com.niit.model.Orders;
 import com.niit.model.Product;
+import com.niit.model.ShippingAddress;
 import com.niit.model.Supplier;
 import com.niit.model.User;
 
@@ -56,6 +61,10 @@ public class ApplicationContextConfig {
 	    sessionBuilder.addAnnotatedClasses(Category.class);
 	    sessionBuilder.addAnnotatedClasses(Supplier.class);
 	    sessionBuilder.addAnnotatedClasses(Product.class);
+	    sessionBuilder.addAnnotatedClasses(Cart.class);
+	    sessionBuilder.addAnnotatedClasses(ShippingAddress.class);
+	    sessionBuilder.addAnnotatedClasses(BillingAddress.class);
+	    sessionBuilder.addAnnotatedClasses(Orders.class);
 
 	    return sessionBuilder.buildSessionFactory();
 	}

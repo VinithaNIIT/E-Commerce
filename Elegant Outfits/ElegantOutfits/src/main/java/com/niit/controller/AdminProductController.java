@@ -5,7 +5,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.List;
 
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -25,6 +26,8 @@ import com.niit.model.Supplier;
 
 @Controller
 public class AdminProductController {
+	
+	private static Logger log=LoggerFactory.getLogger(AdminProductController.class);
 	
 	@Autowired
 	CategoryDAOImpl categoryDAOImpl;
@@ -48,9 +51,10 @@ public class AdminProductController {
 		return mv;
 		
 	}*/
-	@RequestMapping(value="/productdetails",method=RequestMethod.POST)
+	@RequestMapping(value="/Admin_productdetails",method=RequestMethod.POST)
 	public ModelAndView productdetails(@ModelAttribute Product product)
 	{
+		log.debug("Starting of the Method Admin_productdetails");
 		String filename=null;
 		byte[] arr;
 		if(!product.getFile().isEmpty())
@@ -69,15 +73,17 @@ public class AdminProductController {
 		}
 			catch(Exception e){System.out.println(e.getMessage());}
 		}
-		return new ModelAndView("redirect:/viewproduct");
+		log.debug("Ending of the Method Admin_productdetails");
+		return new ModelAndView("redirect:/Admin_viewproduct");
 	}
-	@RequestMapping("/viewproduct")
+	@RequestMapping("/Admin_viewproduct")
 	public ModelAndView viewproduct()
 	{
+		log.debug("Starting of the Method Admin_viewproduct");
 		List<Product>list=productDAOImpl.getProduct();
 		return new ModelAndView("viewproduct","list",list);
 	}
-	@RequestMapping("/product")
+	@RequestMapping("/Admin_product")
 	public ModelAndView addproduct(@ModelAttribute Product product)
 	{
 	  ModelAndView mv=new ModelAndView("product","command",new Product());
@@ -85,25 +91,32 @@ public class AdminProductController {
 		mv.addObject("supplierlist", supplierlist);
 		List<Category> categorylist=categoryDAOImpl.getCategoryList();
 		mv.addObject("categorylist", categorylist);
+		log.debug("Ending of the Method Admin_viewproduct");
 		 return mv;
 	}
-	@RequestMapping(value="/editproduct/{productid}")
+	@RequestMapping(value="/Admin_editproduct/{productid}")
 	public ModelAndView editsupplier(@PathVariable String productid)
 	{
+		log.debug("Starting of the Method Admin_editproduct");
 		Product product=productDAOImpl.getProductById(productid);
+		log.debug("Ending of the Method Admin_editproduct");
 		return new ModelAndView("editproduct","command",product);
 	}
-	@RequestMapping("/productsave")
+	@RequestMapping("/Admin_productsave")
 	public ModelAndView productsave(@ModelAttribute Product product)
 	{
+		log.debug("Starting of the Method Admin_productsave");
 		productDAOImpl.updateProduct(product);
-		return new ModelAndView("redirect:/viewproduct");
+		log.debug("Ending of the Method Admin_productsave");
+		return new ModelAndView("redirect:/Admin_viewproduct");
 	}
-	@RequestMapping("/deleteproduct/{productid}")
+	@RequestMapping("/Admin_deleteproduct/{productid}")
 	public ModelAndView deleteproduct(@PathVariable String productid)
 	{
+		log.debug("Starting of the Method Admin_deleteproduct");
 		productDAOImpl.deleteProduct(productid);
-		return new ModelAndView("redirect:/viewproduct");
+		log.debug("Ending of the Method Admin_deleteproduct");
+		return new ModelAndView("redirect:/Admin_viewproduct");
 	}
 
 }

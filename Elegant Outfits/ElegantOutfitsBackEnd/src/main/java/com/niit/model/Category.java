@@ -11,8 +11,9 @@ import org.springframework.stereotype.Component;
 @Component
 @Entity
 public class Category {
-	//@NotEmpty(message="Id cannot be null")
+	
 	@Id
+	@NotEmpty(message="Id cannot be null")
 	private String categoryid;
 	//@NotNull(message="CategoryName cannot be null")
 	//@Range(min=3,max=30,message="Your name should be between 3 - 30 characters.")

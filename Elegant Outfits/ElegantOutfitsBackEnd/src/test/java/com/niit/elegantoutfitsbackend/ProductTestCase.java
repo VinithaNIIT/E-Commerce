@@ -40,7 +40,7 @@ public class ProductTestCase {
 			product.setProductid("p003");
 			product.setProductname("Pyjama");
 			product.setProductdescription("this is sleep wear");
-			product.setProductprice(Float.parseFloat("500.0"));
+			product.setProductprice(Long.parseLong("500.0"));
 			product.setSupplierid("sup001");
 			product.setCategoryid("cat003");
 			product.setQuantity(Integer.parseInt("5"));

@@ -6,6 +6,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,7 @@ import com.niit.model.User;
 
 @Controller
 public class UserController {
+	private static Logger log=LoggerFactory.getLogger(UserController.class);
 	
 	@Autowired
 	UserDAOImpl userDAO;
@@ -59,6 +62,7 @@ public class UserController {
 	@RequestMapping("/isValidUser")
 	public ModelAndView validateUser(HttpServletRequest request,HttpSession session)
 	{
+		log.debug("Starting of the Method isValidUser");
 		String role;
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
@@ -66,12 +70,14 @@ public class UserController {
 		if(x)
 		{
 			session.setAttribute("username", username);
+			log.debug("Ending of the Method isValidUser");
 			return new ModelAndView("index");
 		}
 		else
 		{
-			return new ModelAndView("error");	
+			return new ModelAndView("login");	
 		}
+	
 		
 	}
 	
@@ -79,20 +85,24 @@ public class UserController {
 	@RequestMapping("/Registrationsuccess")
 	public ModelAndView registrationsuccess(@ModelAttribute User u)
 	{
+		log.debug("Starting of the Method Registrationsuccess");
 		u.setEnabled(true);
 		u.setRole("ROLE_USER");
 		userDAO.addUser(u);
 		
 		ModelAndView mv=new ModelAndView("registrationsuccess");
+		log.debug("Ending of the Method Registrationsuccess");
 		return mv;
 	}
 	
 	@RequestMapping("/logout1")
 	public ModelAndView logout1(HttpServletRequest request)
 	{
+		log.debug("Starting of the Method logout1");
 		ModelAndView mv=new ModelAndView("index");
 		HttpSession session=request.getSession(false);
 		session.invalidate();
+		log.debug("Ending of the Method logout1");
 		return mv;
 	}
 	

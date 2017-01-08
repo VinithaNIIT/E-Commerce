@@ -7,12 +7,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<c:url value="/resources/bootstrap/css" var="a"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
- <link rel="stylesheet" href="resources/bootstrap/css/style.css"/>
+ <link rel="stylesheet" href=${a}/style.css/>
 <title>Add Category</title>
 <style type="text/css">
 
@@ -32,7 +33,7 @@ color: #ff0000;
 <jsp:include page="admin.jsp"></jsp:include><br><br><br><br><br><br><br><br>
 <center>
 <div style="color: black; font-size: 30px">Enter Category Details</div>
-<form:form action="categorydetails" commandName="command" method="post">
+<form:form action="Admin_categorydetails" commandName="command" modelAttribute="command" method="post">
 <%-- <form:errors path="*" cssClass="errorblock" element="div"/> --%>
 <div></div>
 <table width="400px" height="150px">
@@ -40,7 +41,7 @@ color: #ff0000;
 <tr>
 <td>Id:</td>
 <td><form:input path="categoryid" /></td>
-<td><form:errors path="categoryid" cssClass="error"/></td>
+<td><form:errors path="categoryid" cssClass="error" cssStyle="color:#ff0000;"/></td>
 </tr>
 <tr>
 <td>Name:</td>

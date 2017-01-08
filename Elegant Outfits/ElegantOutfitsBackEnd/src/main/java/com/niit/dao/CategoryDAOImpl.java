@@ -6,12 +6,15 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.niit.model.Category;
 
 @Repository("categoryDAO")
 public class CategoryDAOImpl implements CategoryDAO {
+	private static Logger log=LoggerFactory.getLogger(CategoryDAOImpl.class);
 
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -22,7 +25,9 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	/* @Transactional */
 	public boolean insertCategory(Category category) {
+		log.debug("Starting of the Method insertCategory");
 		try {
+			
 
 			Session session = getSession();
 			Transaction tx = session.beginTransaction();
@@ -31,17 +36,19 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 			tx.commit();
 			session.close();
-
+			log.debug("Ending of the Method insertCategory");
 			return true;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}
+		
 
 	}
 
 	public List<Category> getCategory() {
+		log.debug("Starting of the Method getCategory");
 		List<Category> list=null;
 		try {
 			
@@ -55,6 +62,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		log.debug("Ending of the Method getCategory");
 		return list;
 	}
 
@@ -69,15 +77,17 @@ public class CategoryDAOImpl implements CategoryDAO {
 		 * 
 		 * // session.close(); return c;
 		 */
-
+		log.debug("Starting of the Method getCategoryById");
 		Session session = getSession();
 		Category c = session.get(Category.class, categoryid);
 
 		session.close();
+		log.debug("Ending of the Method getCategoryById");
 		return c;
 	}
 
 	public boolean updateCategory(Category category) {
+		log.debug("Starting of the Method updateCategory");
 		try {
 			Session session = getSession();
 			Transaction tx = session.beginTransaction();
@@ -88,6 +98,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			log.debug("Ending of the Method updateCategory");
 			return false;
 		}
 
@@ -103,6 +114,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		 * ca = (Category) li.get(0); } session.delete(ca); tx.commit();
 		 * session.close();
 		 */
+		log.debug("Starting of the Method deleteCategory");
 		try {
 			Session session = getSession();
 			Transaction tx = session.beginTransaction();
@@ -112,6 +124,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 			System.out.println("deleteMethod1:"+c);
 			tx.commit();
 			session.close();
+			log.debug("Ending of the Method deleteCategory");
 			return true;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -124,6 +137,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 	}
 
 	public List<Category> getCategoryList() {
+		log.debug("Starting of the Method getCategoryList");
 		Session session = getSession();
 		Transaction tx = session.beginTransaction();
 		String sqlquery = "select categoryid from Category";
@@ -131,6 +145,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 		List<Category> li = query.list();
 		System.out.println("categoryLIST method" + li);
+		log.debug("Ending of the Method getCategoryList");
 		return li;
 	}
 

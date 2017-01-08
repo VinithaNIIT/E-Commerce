@@ -10,8 +10,9 @@ import org.springframework.stereotype.Component;
 @Component
 @Entity
 public class User implements Serializable {
+	
+								/*@GeneratedValue(strategy=GenerationType.AUTO)*/
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int userid;
 	private String username;
 	private String password;
