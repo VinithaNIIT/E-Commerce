@@ -98,7 +98,10 @@ You choose your product, order it online,<br> and we deliver it right at your do
 <div class="row" style="text-align: center">
  <div class="col-md-4 " >
 
- <a href="#" title="Indian Wear">
+ <a href="/ElegantOutfits/viewproductdetails/cat001" title="Indian Wear">
+ <%-- <c:forEach var="category" items="${categorylist}">
+         <a href="<c:url value='/viewproductdetails/${category.categoryid}'/>" title="Indian Wear"></a>
+         </c:forEach> --%>
   <figure >
    <img class="img-responsive fa-3x social" src="resources/images/indian11.jpg" alt="Indian Wear" width="350px" height="80px" style="margin-left:20px" />
    <figcaption >Indian Wear</p></figcaption>
@@ -107,7 +110,7 @@ You choose your product, order it online,<br> and we deliver it right at your do
    
  </div>
  <div class="col-md-4">
- <a href="#" title="Western Wear">
+ <a href="/ElegantOutfits/viewproductdetails/cat002" title="Western Wear">
  <figure >
    <img class="img-responsive fa-3x social" src="resources/images/western_1.jpg" alt="Western Wear" width="310px" height="80px" style="margin-left:20px" />
    <figcaption><p>Western Wear</p></figcaption>
@@ -116,7 +119,7 @@ You choose your product, order it online,<br> and we deliver it right at your do
  </div>
 
  <div class="col-md-4">
- <a href="#" title="SleepWear">
+ <a href="/ElegantOutfits/viewproductdetails/cat003" title="SleepWear">
  <figure >
    <img class="img-responsive fa-3x social" src="resources/images/sleepwear_1.jpg" alt="Sleepwear" width="310px" height="80px"  />
    <figcaption><p>SleepWear</p></figcaption>

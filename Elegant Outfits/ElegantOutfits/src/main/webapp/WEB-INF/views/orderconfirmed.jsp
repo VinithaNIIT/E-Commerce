@@ -44,7 +44,7 @@ ul.mail-list{
                    
                   
                    
-                   <ul class="mail-list">
+                  <%--  <ul class="mail-list">
                        <li>
                             <label name="" class="form-control mail-search" >Your OrderId is: ${orders}</label>
                            
@@ -56,8 +56,8 @@ ul.mail-list{
                            <label name="" class="form-control mail-search" >Billing Address is: ${billing}</label>
                        </li>
                       
-                   </ul>
-                   <input type="submit" name="_eventId_finalHome" value="Home">
+                   </ul> --%>
+                  <!--  <input type="submit" name="_eventId_finalHome" value="Home"> -->
                </div>
            </div>
        </div>

@@ -89,7 +89,7 @@
 							<td data-th="Subtotal" class="text-center">{{p.price*p.quantity| currency : 'Rs'}}</td>
 							<td class="actions" data-th="">
 								<!-- <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button> -->
-								<a href="removeproduct/{{p.productname}}"><button  class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>								
+								<a href="/ElegantOutfits/removeproduct/{{p.productid}}"><button  class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>								
 							</td>
 						</tr>
 					</tbody>
@@ -98,7 +98,7 @@
 							<td class="text-center"><strong>Rs. ${g}</strong></td><!-- gtotal() -->
 						</tr>
 						<tr>
-							<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+							<td><a href="/ElegantOutfits/Index" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
 							<td colspan="2" class="hidden-xs"></td>
 							<td class="hidden-xs text-center" ><strong>Rs. ${g}</strong></td>
 							<td><a href="/ElegantOutfits/cart_checkout" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>

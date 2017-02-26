@@ -85,7 +85,7 @@ public class CartController {
 			return new ModelAndView("login");
 		}
 		else{
-		ModelAndView mv=new ModelAndView("cart");
+		
 		Product product=productDAOImpl.getProductById(productid);
 		cart.setProductid(product.getProductid());
 		cart.setPrice(product.getProductprice());
@@ -98,31 +98,40 @@ public class CartController {
 		cart.setDate_added(new Date());
 		System.out.println("INSERT CART CONTROLLER"+cart);
 		cartDAOImpl.insertCart(cart);
+		
+		return new ModelAndView("redirect:/m1");
+		}
+		
+	}
+	
+	@RequestMapping("m1")
+	public ModelAndView m1(HttpServletRequest request,HttpSession session)
+	{
+		ModelAndView mv=new ModelAndView("cart");
 		Gson gson=new Gson();
+		session=request.getSession(false);
+		String username=(String)session.getAttribute("username");
 		List<Cart> cart1 =cartDAOImpl.cartList(username);
 		String p=gson.toJson(cart1);
 		mv.addObject("p",p);
 		System.out.println("GSON VALUE:"+p);
 		Long total=(Long)cartDAOImpl.getTotalAmount(username);
-		//Long gtotal=Long.parseLong(gson.toJson(total));
 		mv.addObject("g",total);
 		session.setAttribute("grandtotal", total);
-		System.out.println("Gtotal cart controller gson"+total);
-		log.debug("Ending of the method AddCart");
 		return mv;
-		}
-		
 	}
-	@RequestMapping("/removeproduct/{productname}")
-	public ModelAndView removecart(@PathVariable String productname)
+	@RequestMapping("/removeproduct/{productid}")
+	public ModelAndView removecart(@PathVariable String productid)
 	{
 		log.debug("Starting of the Method removecart");
-		cartDAOImpl.deleteCart(productname);
+		cartDAOImpl.deleteCart(productid);
 		log.debug("Ending of the Method removecart");
-		return new ModelAndView("redirect/cart");
+		return new ModelAndView("redirect:/m1");
 		
 		
 	}
+	
+	
 	
 	
 	/*@RequestMapping("/cart/{productid}")

@@ -96,12 +96,12 @@ public class CartDAOImpl implements CartDAO {
 
 	}
 
-	public void deleteCart(String productname) {
+	/*public void deleteCart(String productid) {
 		log.debug("Starting of the Method deleteCart");
 		try {
 			Session session = getSession();
 			Transaction tx = session.beginTransaction();
-			Cart c = session.get(Cart.class, productname);
+			Cart c = session.get(Cart.class, productid);
 
 			session.delete(c);
 			tx.commit();
@@ -113,7 +113,25 @@ public class CartDAOImpl implements CartDAO {
 		log.debug("Ending of the Method deleteCart");
 
 	}
+*/
+	
+	public void deleteCart(String productid){
+		log.debug("Starting of the Method deleteCart");
+		
+		Session session = getSession();
+		String hql = "delete from Cart where productid=:productid ";
 
+		Query query = session.createQuery(hql);
+		query.setParameter("productid", productid);
+		query.executeUpdate();
+		// Long gtotal=getTotalAmount(username);
+		session.close();
+		log.debug("Ending of the Method deleteCart");
+		
+	}
+	
+	
+	
 	public Long getMaxId() {
 		log.debug("Starting of the Method getMaxId");
 		Long maxid = 100L;

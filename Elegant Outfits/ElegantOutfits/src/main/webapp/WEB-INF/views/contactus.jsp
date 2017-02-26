@@ -20,5 +20,41 @@
 <%-- <jsp:include page="header.jsp"></jsp:include> --%>
 <c:import url="/header"></c:import>
 <jsp:include page="footer.jsp"></jsp:include>
+
+
+<div class="container"   >
+
+    <div >
+        <div class="row">
+            <div class="col-md-12">
+            <h1 style="font-size:30px;text-align: center; text-decoration: underline; color:black;font:bold;">Contact Us</h1>
+                <div class="row">
+                
+                    <div class="col-md-4">
+                  
+                        <h1  style="font-size:20px; color:black;font:bold;">
+                            Sector 32, Institutional Area, Gurgaon, Haryana 122001, India</h1>
+                    </div>
+                    <div class="col-md-4 ">
+                        <h2  style="font-size:20px; color:black;font:bold;">
+                            Corporate: info@elegantoutfits.com
+						Careers: careers@elegantoutfits.com</h2>
+						</div>
+						<div class="col-md-4">
+                        <h3 style="font-size:20px; color:black;font:bold;">
+                            Toll-free number: 1800 102 6448 85</h3>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+
+
+
+
 </body>
 </html>

@@ -95,8 +95,8 @@
 					
 				</fieldset>
 				<div class="form-actions">
-					<input type="submit" name=""_eventId_submitBillingAddress value="Save" class="btn btn-md btn-success">
-						<input type="submit" name="_eventId_cancel" class="btn btn-md btn-danger">
+					<input type="submit" name="_eventId_submitBillingAddress" value="Save" class="btn btn-md btn-success">
+						<!-- <input type="submit" name="_eventId_cancel" class="btn btn-md btn-danger"> -->
 				</div>
 			</form>
 		</div>

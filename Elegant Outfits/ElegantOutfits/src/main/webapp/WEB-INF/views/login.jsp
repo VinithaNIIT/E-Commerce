@@ -19,10 +19,15 @@
 <body style=" margin-top:150px;background-image:url('resources/images/wallpaper2.jpg');background-repeat: no-repeat;background-size:cover;min-height: 100%;position: relative; ">
 <%-- <jsp:include page="header.jsp"></jsp:include> --%>
 <c:import url="/header"></c:import>
-<div class="container" style="float:right">
-            <form class="form-horizontal" role="form" action="/ElegantOutfits/isValidUser" method="post"style="float:center">
-                <h2>Login Form</h2>
+<div class="container" style="float:left">
+            <form class="form-horizontal" role="form" action="/ElegantOutfits/isValidUser" method="post"style="float:right">
+               <!--  <h2 style="font-size:20px;">Login Form</h2> -->
                 <div class="form-group">
+                 <div class="col-sm-9" style="margin-left: 5em;
+    margin-bottom: 1em;" >
+               <h2 style="font-size:20px;">LOGIN FORM</h2>
+                   <!-- <h2 style="padding:-60px;">Admin Login Form</h2> -->
+                   </div>
                    
                     <div class="col-sm-9" style="margin-left: 5em;
     margin-bottom: 1em;" >

@@ -80,43 +80,7 @@
 						<input id="country" name="country" type="text"
 								placeholder="country" class="input-xlarge">
 							<p class="help-block"></p>
-<!-- 							<select id="country" name="country" class="input-xlarge">
-								<option value="" selected="selected">(please select a
-									country)</option>
-								<option value="AF">Afghanistan</option>
 
-								<option value="AU">Australia</option>
-
-								<option value="BH">Bahrain</option>
-
-
-
-								<option value="BR">Brazil</option>
-
-								<option value="CN">China</option>
-
-
-
-								<option value="FI">Finland</option>
-								<option value="FR">France</option>
-
-								<option value="DE">Germany</option>
-
-
-								<option value="IN">India</option>
-								<option value="ID">Indonesia</option>
-
-								<option value="IT">Italy</option>
-								<option value="NZ">New Zealand</option>
-								<option value="NO">Norway</option>
-								<option value="OM">Oman</option>
-								<option value="LK">Sri Lanka</option>
-								<option value="CH">Switzerland</option>
-								<option value="AE">United Arab Emirates</option>
-								<option value="GB">United Kingdom</option>
-								<option value="US">United States</option>
-
-							</select> -->
 						</div>
 					</div>
 					<!-- postal-code input-->
@@ -131,8 +95,8 @@
 					
 				</fieldset>
 				<div class="form-actions">
-					<input type="submit" name=""_eventId_submitShippingAddress value="Save" class="btn btn-md btn-success">
-						<input type="submit" name="_eventId_cancel" class="btn btn-md btn-danger">
+					<input type="submit" name="_eventId_submitShippingAddress" value="Save" class="btn btn-md btn-success">
+						<!-- <input type="submit" name="_eventId_cancel" class="btn btn-md btn-danger"> -->
 				</div>
 			</form>
 		</div>

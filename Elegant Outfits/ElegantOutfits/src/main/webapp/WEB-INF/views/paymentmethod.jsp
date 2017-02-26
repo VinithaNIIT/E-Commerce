@@ -30,7 +30,7 @@
                         <input type="radio" name="payment" value="Check" />Check<br />
                         <div class="form-actions">
 					<input type="submit" name=""_eventId_submitPaymentMethod value="Save" class="btn btn-md btn-success">
-						<input type="submit" name="_eventId_cancel" class="btn btn-md btn-danger">
+						<!-- <input type="submit" name="_eventId_cancel" class="btn btn-md btn-danger"> -->
 				</div>
           
        </fieldset>

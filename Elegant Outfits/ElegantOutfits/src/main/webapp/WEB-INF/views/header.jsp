@@ -38,7 +38,7 @@
       <a href="#" class="pull-left"><img src="${x}/logo_1.jpg" height="60px" width="80px" ></a> 
     </div>
     <ul class="nav navbar-nav" style="font-family: sans-serif;text-transform: uppercase;">
-     <li  ><a href="Index" class="active" style="color: black;">Home</a></li> 
+     <li  ><a href="/ElegantOutfits/Index" class="active" style="color: black;">Home</a></li> 
       <li class="dropdown" >
       
       <a class="dropdown-toggle" data-toggle="dropdown"  href="#" style="color: black;">Product <span class="caret"></span></a>
